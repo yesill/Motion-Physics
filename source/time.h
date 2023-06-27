@@ -10,6 +10,7 @@ public:
     Time(double second);
     double getSecond() const;
     void setSecond(double newSecond);
+    bool operator<(const Time& time) const;
 };
 
 #endif // TIME_H3

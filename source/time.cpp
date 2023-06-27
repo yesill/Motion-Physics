@@ -15,3 +15,8 @@ void Time::setSecond(double newSecond)
 {
     second = newSecond;
 }
+
+bool Time::operator<(const Time &time) const
+{
+    return this->second < time.second;
+}

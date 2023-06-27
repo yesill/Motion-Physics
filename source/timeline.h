@@ -2,35 +2,20 @@
 #define TIMELINE_H
 #include <map>
 #include "parameters.h"
-#include "vector3d.h"
+#include "time.h"
 
 
 class Timeline
 {
 private:
-    int* timestamps;
-    Vector3D* positions;
-    double* mass;
-    Parameters* parameters;
-    Vector3D* shapes;
+    std::map<Time, Parameters> timeline;
 public:
-    Timeline(
-        int* timestamps,
-        Vector3D* positions,
-        double* mass,
-        Parameters* parameters,
-        Vector3D* shapes
-    );
-    int *getTimestamps() const;
-    void setTimestamps(int *newTimestamps);
-    Vector3D *getPositions() const;
-    void setPositions(Vector3D *newPositions);
-    double *getMass() const;
-    void setMass(double *newMass);
-    Parameters *getParameters() const;
-    void setParameters(Parameters *newParameters);
-    Vector3D *getShapes() const;
-    void setShapes(Vector3D *newShapes);
+    Timeline(Vector3D position, Shape shape, double mass);
+
+    const std::map<Time, Parameters> &getTimeline() const;
+    void setTimeline(const std::map<Time, Parameters> &newTimelaine);
+
+    void addToTimeline(Time time, Parameters parameters);
 };
 
 #endif // TIMELINE_H

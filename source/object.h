@@ -15,7 +15,10 @@ public:
 
     const std::string &getName() const;
     void setName(const std::string &newName);
-    const void printInfo(Time time) const;
+    const Timeline &getTimeline() const;
+    void setTimeline(const Timeline &newTimeline);
+
+    const void printInfo() const;
 };
 
 #endif // OBJECT_H

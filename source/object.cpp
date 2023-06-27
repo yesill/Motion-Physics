@@ -6,6 +6,15 @@ Object::Object(std::string name, Timeline timeline):
 
 }
 
+const Timeline &Object::getTimeline() const
+{
+    return timeline;
+}
+
+void Object::setTimeline(const Timeline &newTimeline)
+{
+    timeline = newTimeline;
+}
 const std::string &Object::getName() const
 {
     return name;
@@ -16,9 +25,7 @@ void Object::setName(const std::string &newName)
     name = newName;
 }
 
-const void Object::printInfo(Time time=Time(0)) const
+const void Object::printInfo() const
 {
-    std::cout << this->name << std::endl
-              << this->timeline.getMass()
-              << this->timeline
+    std::cout << this->getName() << std::endl;
 }
